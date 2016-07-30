@@ -3,7 +3,6 @@ source 'https://rubygems.org'
  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
  gem 'rails', '4.2.5'
  
- # #1
  group :production do
    gem 'pg'
    gem 'rails_12factor'
@@ -13,9 +12,9 @@ source 'https://rubygems.org'
    gem 'rspec-rails', '~> 3.0'
    gem 'shoulda'
    gem 'factory_girl_rails', '~> 4.0'
+   gem 'faker'
  end
  
- # #2
  group :development do
    gem 'sqlite3'
    
@@ -40,3 +39,5 @@ source 'https://rubygems.org'
  gem 'figaro', '1.0'
  # Used to redirect_to 
  gem 'responders', '~> 2.0'
+ # Add Devise
+ gem 'devise'
