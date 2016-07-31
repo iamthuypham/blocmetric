@@ -5,12 +5,15 @@
        <div class="media">
          <div class="media-body">
            <h4 class="media-heading">
+             <%= link_to registered_application.name, registered_application_path(registered_application.id) %>
+               <small>
+               <%= registered_application.url %>
+               </small>
+             </br>
+             <%= pluralize(registered_application.events.count, "event") %>
+             </br>
              <small>
-             <%= link_to "De-register", registered_application, method: :delete, class: 'btn btn-danger btn-sm'%>
-             </small>
-             <%= link_to registered_application.name, registered_applications_path %>
-             <small>
-             <%= registered_application.url %>
+             <%= link_to "De-register", registered_application, method: :delete%>
              </small>
            </h4>
          </div>

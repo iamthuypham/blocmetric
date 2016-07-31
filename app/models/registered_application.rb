@@ -1,3 +1,4 @@
 class RegisteredApplication < ActiveRecord::Base
-  belongs_to :users
+  belongs_to :user
+  has_many :events
 end

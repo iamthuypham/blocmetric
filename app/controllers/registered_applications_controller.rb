@@ -32,6 +32,16 @@ class RegisteredApplicationsController < ApplicationController
      end
   end
   
+  def show
+    @registered_application = RegisteredApplication.find(params[:id])
+    @events = @registered_application.events.group_by(&:name)
+    
+    unless current_user
+      flash[:alert] = "You must be signed in to view your applications."
+      redirect_to new_user_session_path
+    end
+  end
+  
   private
   def registered_application_params
      params.require(:registered_application).permit(:name, :url, :user_id)
