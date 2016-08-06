@@ -1,7 +1,7 @@
 class RegisteredApplicationsController < ApplicationController
   def create
-    @user = current_user
-    @registered_application = @user.registered_applications.build(registered_application_params)
+    @registered_application = RegisteredApplication.new(registered_application_params)
+    @registered_application.user = current_user
     
     if @registered_application.save
       flash[:notice] = "Your application was registered successfully."
