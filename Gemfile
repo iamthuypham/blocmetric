@@ -43,3 +43,5 @@ source 'https://rubygems.org'
  gem 'devise'
  # Used to create graph of events of another app
  gem "chartkick"
+ # Used to easy change format of default date 00:00:00 UTC ...
+ gem 'groupdate'
