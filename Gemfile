@@ -41,3 +41,5 @@ source 'https://rubygems.org'
  gem 'responders', '~> 2.0'
  # Add Devise
  gem 'devise'
+ # Used to create graph of events of another app
+ gem "chartkick"
