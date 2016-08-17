@@ -1,6 +1,7 @@
 class API::EventsController < ApplicationController
   skip_before_filter :verify_authenticity_token
   before_filter :set_access_control_headers
+  respond_to :json
 
   def set_access_control_headers
      headers['Access-Control-Allow-Origin'] = '*'
@@ -32,4 +33,4 @@ class API::EventsController < ApplicationController
    def event_params
      params.require(:event).permit(:name)
    end
- end
+end
