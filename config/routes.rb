@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :users, only: [:show]
-    resources :registered_applications, only: [:create, :new, :index, :destroy]
+    resources :registered_applications
   get 'welcome/index'
   root 'welcome#index'
 

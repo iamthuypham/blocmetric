@@ -1,0 +1,12 @@
+<h1><%= @registered_application.name %></h1>
+<h3><%= pluralize(@registered_application.events.count, "event") %>:</h3>
+<ul class="media">
+  <% @events.sort.each do |event_hash| %>
+    <div class="media-body">
+      <li class="media-heading">
+        <%= event_hash.first %>
+      </li>
+    </div>
+  <% end  %>
+</ul>
+
