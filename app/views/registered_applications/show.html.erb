@@ -1,12 +1,24 @@
 <h1><%= @registered_application.name %></h1>
-<h3><%= pluralize(@registered_application.events.count, "event") %>:</h3>
-<ul class="media">
-  <% @events.sort.each do |event_hash| %>
-    <div class="media-body">
-      <li class="media-heading">
-        <%= event_hash.first %>
-      </li>
-    </div>
-  <% end  %>
-</ul>
-
+<small><%= @registered_application.url %></small>
+<div class="row">
+  <div class="col-md-4">
+    <h3>Events Count by Day Of Week</h3>
+    <%= pie_chart @registered_application.events.group_by_day_of_week(:created_at).count %>
+  </div>
+  <div class="col-md-8">
+    <h3>Events Count by Day</h3>
+    <%= line_chart @registered_application.events.group_by_day(:created_at).count %>
+  </div>
+</div>
+<div class="row">
+  <h3>Total: <%= pluralize(@registered_application.events.count, "event") %></h3>
+  <ul class="media">
+    <% @events.sort.each do |event_hash| %>
+      <div class="media-body">
+        <li class="media-heading">
+          <%= event_hash.first %>
+        </li>
+      </div>
+    <% end  %>
+  </ul>
+</div>
